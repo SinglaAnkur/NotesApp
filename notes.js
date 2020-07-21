@@ -24,6 +24,19 @@ const addNote = (title, body) => {
     
 }
 
+const removeNote = (title) => {
+    const notes = loadNotes()
+    const notesToKeep = notes.filter((note) => note.title !== title)
+
+    if(notes.length === notesToKeep.length) {
+        console.log(chalk.red.inverse("No Note found!"))
+    }
+    else {
+        console.log(chalk.green.inverse("Note removed!"))
+        saveNotes(notesToKeep)
+    }
+}
+
 
 const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes)
