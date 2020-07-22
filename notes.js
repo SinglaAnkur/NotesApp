@@ -39,16 +39,16 @@ const removeNote = (title) => {
 
 const loadNotes = () => {
     try {
-        const dataBuffer = fs.readFileSync('notes.json')
-        const dataJSON = dataBuffer.toString()
-        return JSON.parse(dataJSON)
+        const dataBuffer = fs.readFileSync('notes.json') //reads file in synchronous way
+        const dataJSON = dataBuffer.toString()  //converts object to JSON string
+        return JSON.parse(dataJSON)  //converts JSON string to JS object/value.
     } catch (error) {
         return []
     }
 }
 
 const saveNotes = (notes) => {
-    const dataJSON = JSON.stringify(notes)
+    const dataJSON = JSON.stringify(notes)  //converts JS object/value to JSON string
     fs.writeFileSync('notes.json',dataJSON)
 }
 

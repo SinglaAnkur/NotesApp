@@ -7,8 +7,8 @@ const { describe } = require('yargs')
 yargs.version('1.1.0')
 
 yargs.command({
-    command: 'add',
-    describe: "Add a new note",
+    command: 'add', //command is a property
+    describe: "Add a new note",     //describe is a property
     builder: {
         title: {
             describe: 'Note title',
